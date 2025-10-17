@@ -1,0 +1,96 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* セクション間のスペーシング */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* グローバルアニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* カラーパレット（ウォームトーン） */
+:root {
+  --color-primary: #3d2f2a;        /* ダークブラウン */
+  --color-secondary: #b8956a;      /* ゴールデンベージュ */
+  --color-accent: #c17855;         /* テラコッタ */
+  --color-bg-light: #f5f0ea;       /* クリーム */
+  --color-bg-white: #faf8f5;       /* オフホワイト */
+  --color-text-dark: #3d2f2a;      /* ダークブラウン */
+  --color-text-medium: #6b5d56;    /* ミディアムブラウン */
+  --color-text-light: #9a8d86;     /* ライトブラウン */
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* 画像の最適化 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* リンクのデフォルトスタイルリセット */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ボタンのデフォルトスタイルリセット */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* フォーカス時のアウトライン */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

@@ -1,0 +1,132 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+  background: rgba(250, 248, 245, 0.98);
+  box-shadow: 0 2px 20px rgba(184, 149, 106, 0.15);
+  padding: 1rem 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.logo-subtitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-medium);
+  margin-top: -0.2rem;
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav a {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav a:hover {
+  color: var(--color-accent);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.social-icons a:hover {
+  background: var(--color-bg-light);
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-icons svg {
+  fill: var(--color-primary);
+  transition: fill 0.3s ease;
+}
+
+.social-icons a:hover svg {
+  fill: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .social-icons {
+    gap: 0.8rem;
+  }
+}
